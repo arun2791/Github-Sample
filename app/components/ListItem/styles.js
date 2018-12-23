@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         width: metrics.circle,
         height: metrics.circle,
         borderRadius: metrics.circle/2,
-        backgroundColor: color.COLOR_ORANGE,
+        backgroundColor: color.COLOR_ORANGE
     }
 
 });
