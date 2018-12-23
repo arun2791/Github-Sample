@@ -5,6 +5,9 @@ import styles from './styles';
 import PropTypes from 'prop-types';
 import ListItem from '../../components/ListItem/ListItem';
 import SearchBar from '../../components/SearchBar/SearchBar';
+import TabBar from '../../components/TabBar/TabBar';
+
+const Tabs = ["Overview","Repositories","Stars","Fork"]
 
 class ContentsView extends Component {
 	state={
@@ -23,6 +26,7 @@ class ContentsView extends Component {
 		return (
 			<View style={styles.container}>
 				<Toolbar/>
+				<TabBar tabs={Tabs}/>
 				<SearchBar onChangeText={this.onChangeText}/>
 				<FlatList
 					data={this.state.data}
