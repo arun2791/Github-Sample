@@ -4,9 +4,11 @@ import metrics from '../../config/metrics';
 import color from 'app/config/colors';
 
 const styles = StyleSheet.create({
-    searchBar: {
-        margin: metrics.baseMargin, borderWidth: 1, borderColor: 'black', height: metrics.searchBar,
-        fontSize: 12,
+    container: {
+        height: metrics.screenHeight,
+        width: metrics.screenWidth,
+        justifyContent: 'center',
+        alignItems: 'center',
     }
 });
 

@@ -5,6 +5,8 @@ import styles from './styles';
 const SearchBar = (props) => {
     return(
         <TextInput
+            {...props}
+            placeholder={'search'}
             onChangeText={(text)=>props.onChangeText(text)}
             style={styles.searchBar}/>
     );

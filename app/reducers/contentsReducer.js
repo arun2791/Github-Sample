@@ -21,10 +21,20 @@ export const contentsReducer = createReducer(initialState, {
 		};
 	},
 	[types.CONTENTS_RESPONSE](state, action) {
+		const items = action.response;
+		const languages = [{label:'Any', value: 0}];
+		items.map(data=>{
+			const index = languages.findIndex(val=>val.label === data.language)
+			if(index<0 && data.language){
+				languages.push({label:data.language,value:languages.length});
+			}
+			return;
+		})
 		return {
 			...state,
-			items: action.response,
-			loading: false
+			items,
+			loading: false,
+			languages
 		};
 	},
 	[types.CONTENTS_FAILED](state) {
@@ -34,13 +44,4 @@ export const contentsReducer = createReducer(initialState, {
 			loading: false
 		};
 	},
-	[types.SEARCH_REQUEST](state, action) {
-		const { items } = state;
-		//const searchedItems = items.filter(item => {return item.name.toLowerCase().startsWith(action.keyword)});
-		const searchedItems = Utils.searchFunction(action.keyword, items);
-		return {
-			...state,
-			searchedItems
-		};
-	}
 });

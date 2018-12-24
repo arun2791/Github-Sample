@@ -1,7 +1,7 @@
-export const searchFunction = (keyWord, data) => {
+export const searchFunction = (keyWord, data, fieldName) => {
 	let text = keyWord.toLowerCase();
 	let filteredName = data.filter(item => {
-		return item.name.toLowerCase().match(text);
+		return item[fieldName] && item[fieldName].toLowerCase().match(text);
 	});
 	if (!text || text === '') {
 		return data;
@@ -12,3 +12,4 @@ export const searchFunction = (keyWord, data) => {
 		return filteredName;
 	}
 };
+

@@ -7,11 +7,11 @@ const ApplicationStyles = {
         backgroundColor: color.COLOR_CONTAINER
     },
     fontlight: {
-      fontFamily: fonts.FONT_LIGHT,
-      color: color.COLOR_BLACK
+      fontFamily: fonts.FONT_BOLD,
+      color: color.COLOR_GREY
     },
     fontsemibold: {
-      fontFamily: fonts.FONT_SEMIBOLD,
+      fontFamily: fonts.FONT_BOLD,
       color: color.COLOR_BLACK
     }
 }

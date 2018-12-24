@@ -6,12 +6,12 @@ import metrics from '../../config/metrics';
 import Colors from '../../config/colors';
 const {height, width} = Dimensions.get('window');
 const ListItem = (props) => {
-    const {description, full_name, stargazers_count, language} = props.item;
-    //const imagePath = getImagePath(image);
+    const {description, full_name, stargazers_count, language, fork} = props.item;
+    const typeName = fork ? "ios-git-branch" : "ios-briefcase";
     
     return(
         <View style={styles.itemView}> 
-            <Icon name="ios-git-branch" size={metrics.titleImage} color={Colors.COLOR_GREY}/>
+            <Icon name={typeName} size={metrics.titleImage} color={Colors.COLOR_GREY} style={styles.iconStyle}/>
             <View style={styles.heading}>  
                 <Text style={styles.textTitle}>{full_name}</Text>
                 <Text style={styles.textDesc}>{description}</Text>

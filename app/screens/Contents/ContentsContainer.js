@@ -5,7 +5,7 @@ import * as contentActions from 'app/actions/contentsActions';
 
 class ContentsContainer extends Component {
 	componentDidMount() {
-		this.props.requestContents(1);
+		this.props.requestContents();
 	}
 
 	render() {
@@ -14,12 +14,11 @@ class ContentsContainer extends Component {
 }
 
 function mapStateToProps(state) {
-	const { title, items, totalItems, searchedItems } = state.contentsReducer;
+	const {  items, languages, loading } = state.contentsReducer;
 	return {
-		title,
 		items,
-		totalItems,
-		searchedItems
+		languages,
+		loading
 	};
 }
 function mapDispatchToProps(dispatch) {

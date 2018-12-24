@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import ApplicationStyles from 'app/config/styles';
-import metrics from 'app/config/metrics';
-import color from 'app/config/colors';
+import ApplicationStyles from '../../config/styles';
+import metrics from '../../config/metrics';
+import color from '../../config/colors';
 
 const styles = StyleSheet.create({
     ...ApplicationStyles,
@@ -16,19 +16,21 @@ const styles = StyleSheet.create({
     },
     textTitle: {
         ...ApplicationStyles.fontlight,
-        textAlign: 'left',
         color: color.COLOR_BLUE,
-        fontSize: 18
+        fontSize: 16,
+        lineHeight: metrics.titleHeight
     },
     textDesc: {
         ...ApplicationStyles.fontlight,
-        textAlign: 'left',
-        marginVertical: metrics.smallMargin
+        fontSize: 12,
+        marginBottom: metrics.smallMargin,
+        marginTop: metrics.doubleMargin
     },
     textCount: {
         ...ApplicationStyles.fontlight,
-        textAlign: 'left',
-        marginHorizontal: metrics.smallMargin
+        marginHorizontal: metrics.smallMargin,
+        fontSize: 12,
+        marginVertical: metrics.smallMargin
     },
     itemView: {
         flexDirection: 'row',
@@ -43,7 +45,11 @@ const styles = StyleSheet.create({
         width: metrics.circle,
         height: metrics.circle,
         borderRadius: metrics.circle/2,
-        backgroundColor: color.COLOR_ORANGE
+        backgroundColor: color.COLOR_ORANGE,
+        marginLeft: metrics.smallMargin
+    },
+    iconStyle: {
+        marginTop: metrics.baseMargin
     }
 
 });
