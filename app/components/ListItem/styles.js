@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         marginLeft: metrics.smallMargin
     },
     iconStyle: {
-        marginTop: metrics.baseMargin
+        marginTop: metrics.smallMargin
     }
 
 });

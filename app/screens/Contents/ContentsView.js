@@ -11,7 +11,7 @@ import RadioGroup from 'react-native-radio-buttons-group';
 import TabBar from '../../components/TabBar/TabBar';
 import * as Utils from '../../lib/utils';
 import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator';
-
+import DialogDisp from '../../components/Dialog/Dialog';
 
 const radio_props = [
     {label: 'param1', value: 0 },
@@ -50,7 +50,7 @@ class ContentsView extends Component {
 					ItemSeparatorComponent={this.renderSeparator}
 					ListHeaderComponent={this.renderHeader}
 				/>
-				{this.state.dialog && this.DialogView()}
+				{this.state.dialog && <DialogDisp languages= {this.props.languages} onPress={this.onPress} onClick={this.onClick}/>}
 				{this.props.loading && <LoadingIndicator/>}
 			</View>
 		);
@@ -65,8 +65,8 @@ class ContentsView extends Component {
 		);
 	}
 
-	onClick = () => {
-		this.setState({dialog: true});
+	onClick = (dialog) => {
+		this.setState({dialog});
 	}
 
 	renderSeparator = () => {
@@ -98,17 +98,6 @@ class ContentsView extends Component {
 		const {items} = this.props;
 		const dataItems = Utils.searchFunction(selectedItem, items, 'language');
 		this.setState({dialog: false, selectedItem, data: dataItems, searchKeyword: '' });
-	}
-
-	DialogView = (props) => {
-		return(
-			<View style={styles.dialogView}>
-				<Dialog>
-					<Dialog.Title><Text>Select Language</Text></Dialog.Title>
-					<RadioGroup radioButtons={this.props.languages} onPress={this.onPress} />
-				</Dialog>
-			</View>
-		);
 	}
 }
 

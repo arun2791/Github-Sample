@@ -13,7 +13,7 @@ const LangaugeSelection = (props) => {
     return(
         <View style={styles.row}>
             <Text style={styles.text}>Language</Text>
-            <TouchableOpacity style={styles.dropDown} onPress={()=>props.onClick()}>
+            <TouchableOpacity style={styles.dropDown} onPress={()=>props.onClick(true)}>
                 <Text style={styles.selectedLanguageText}>{selectedItem}</Text>
                 <Icon name="md-arrow-dropdown" size={metrics.dropDown} color={Colors.COLOR_GREY}/>
             </TouchableOpacity>
