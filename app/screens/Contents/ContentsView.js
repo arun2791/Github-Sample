@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
 import Toolbar from '../../components/ToolBar/ToolBar';
 import styles from './styles';
 import PropTypes from 'prop-types';
 import ListItem from '../../components/ListItem/ListItem';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import LanguageSelection from '../../components/LanguageSelection/LanguageSelection';
-import { Dialog } from 'react-native-material-ui';
-import RadioGroup from 'react-native-radio-buttons-group';
 import TabBar from '../../components/TabBar/TabBar';
 import * as Utils from '../../lib/utils';
 import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator';
 import DialogDisp from '../../components/Dialog/Dialog';
-
-const radio_props = [
-    {label: 'param1', value: 0 },
-    {label: 'param2', value: 1 }
-  ];
 
 class ContentsView extends Component {
 	state={

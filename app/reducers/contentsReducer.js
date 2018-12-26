@@ -21,7 +21,13 @@ export const contentsReducer = createReducer(initialState, {
 		};
 	},
 	[types.CONTENTS_RESPONSE](state, action) {
-		const items = action.response;
+		const items = action.response.map(data=> {return{
+			full_name: data.full_name,
+			language: data.language,
+			stargazers_count: data.stargazers_count,
+			description: data.description,
+			fork: data.fork
+		}});
 		const languages = [{label:'Any', value: 0}];
 		items.map(data=>{
 			const index = languages.findIndex(val=>val.label === data.language)
